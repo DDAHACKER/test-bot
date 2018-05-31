@@ -7,7 +7,7 @@ module.exports.run = async(bot,message,args) => {
   prefixes[message.guild.id] = {
     prefixes: args[0]
   };
-  fs.writeFile("../storage/prefixes.json", JSON.stingify(prefixes), (err) => {
+  fs.writeFile("../storage/prefixes.json", JSON.stringify(prefixes), (err) => {
     if(err) console.log(err);
   });
   let embed = new Discord.RichEmbed()
